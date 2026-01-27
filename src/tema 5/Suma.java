@@ -1,7 +1,7 @@
 //Ejercicio número mayor que otro
 //Para hacerlo tienes que usar las puertas lógicas
 //Matemáticas vaya con los nombres de mierda (>, <, ==, etc)
-public class App {
+public class Suma {
     public static void main(String[] args) throws Exception {
         comparar(1, 3, 4); //Aquí tiene que haber 3 datos
     }
