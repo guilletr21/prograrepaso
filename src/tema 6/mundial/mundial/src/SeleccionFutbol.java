@@ -83,9 +83,9 @@ public class SeleccionFutbol {
         // Con un foreach recorremos el Arraylist de integrantes
         for (Persona persona : this.integrantes) {
             // Creamos la variable imc y la definimos
-            double imc = persona.getPeso()/Math.pow(persona.getAltura(), 2);
+            double hola = persona.getPeso()/Math.pow(persona.getAltura(), 2);
             //Si persona es futbolista y tiene el imc>22 tiene sobrepeso
-            if (persona instanceof Futbolista && imc>22) {
+            if (persona instanceof Futbolista && hola>22) {
                 System.out.println("Tiene sobrepeso: " +persona);
             }
         }
