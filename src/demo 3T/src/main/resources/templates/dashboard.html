@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>lista de peliculas</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Titulo</th>
+                <th>Año</th>
+                <th>Sinopsis</th>
+                <th>Puntuación</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="pelicula : ${pelis}">
+                <td th:text="${pelicula.titulo}"></td>
+                <td th:text="${pelicula.anyo}"></td>
+                <td th:text="${pelicula.sinopsis}"></td>
+                <td th:text="${pelicula.puntuacion}"></td>
+                <td>
+                    <form action="/borrar" method="post">
+                        <input type="hidden" name="id" th:value="${pelicula.id}">
+                        <button type="submit">Borrar</button>
+                    </form>
+
+                    <form action="/editar" method="get" modelAttribute="pelicula">
+                        <input type="hidden" name="id" th:value="${pelicula.id}">
+                        <input type="submit" value="Editar">
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+
+    
+
+            <form action="/crear"  method="POST">
+        
+            <label for="titulo">titulo:</label>
+            <input id="titulo"  type="text" name="titulo" required>
+
+            <label for="anyo">Año:</label>
+            <input id="anyo" type="number" name="anyo" required>
+
+            <label for="sinopsis">Sinopsis:</label>
+            <textarea id="sinopsis" type="text" name="sinopsis" required></textarea>
+
+            <label for="puntuacion">Puntuación:</label>
+            <input id="puntuacion" type="number" min="0" max="10" name="puntuacion" required>
+
+            <input type="submit" value="Añadir película">
+    </form>
+
+    
+    
+
+
+</body>
+</html>

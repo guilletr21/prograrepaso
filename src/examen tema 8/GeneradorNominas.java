@@ -47,7 +47,7 @@ public class GeneradorNominas {
                     double valorHora = Double.parseDouble(datos[2]);
                     
                     Empleado emp = new Empleado(id, nombre, valorHora);
-                    mapa.put(id, emp); // La clave es el ID_EMPLEADO
+                    mapa.put(id, emp);                                      // La clave es el ID_EMPLEADO
                 }
             }
         } catch (IOException e) {

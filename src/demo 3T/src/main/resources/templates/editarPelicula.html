@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>video</title>
+</head>
+<body>
+    <h1>Editar pelicula</h1>
+
+   <form action="/actualizar" method="post" modelAttribute="pelicula">
+        <input type="hidden" name="id" th:value="${pelicula.id}">
+       <p>titulo<input id="titulo"  type="text" name="titulo" th:value="${pelicula.titulo}"></p>
+        <p>Año<input id="anyo" type="number" name="anyo" th:value="${pelicula.anyo}"></p>  
+        <p>Sinopsis<textarea id="sinopsis" type="text" name="sinopsis" th:text="${pelicula.sinopsis}"></textarea></p>
+        <p>Puntuación<input id="puntuacion" type="number" min="0" max="10" name="puntuacion" th:value="${pelicula.puntuacion}"></p>
+        <p><input type="submit" value="enviar"></p>
+        
+   </form>
+</body>
+</html>
